@@ -22,3 +22,4 @@ frontend/.env
 
 # macOS
 .DS_Store
+backend/model/model.pt
