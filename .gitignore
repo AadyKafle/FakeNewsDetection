@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+*.env
+*.venv
+
+# Conda
+*.conda
+*.condarc
+*.ipynb_checkpoints
+
+# PyTorch models (optional, can track if small)
+training/model.pt
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# macOS
+.DS_Store
