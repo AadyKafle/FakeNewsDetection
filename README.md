@@ -22,24 +22,25 @@ This project includes:
 ---
 
 ## 🗂️ Project Structure
+## 🗂️ Project Structure
 
-
+```
 FakeNewsDetection/
-│
 ├── backend/
-│ ├── app.py # FastAPI inference server
-│ └── model/ # Saved trained model (ignored in git)
+│   ├── app.py        # FastAPI inference server
+│   └── model/        # Saved trained model (ignored in git)
 │
 ├── frontend/
-│ ├── src/
-│ │ └── FakeNewsDetector.tsx
-│ └── package.json
+│   ├── src/
+│   │   └── FakeNewsDetector.tsx
+│   └── package.json
 │
 ├── training/
-│ └── train.py # Model training script
+│   └── train.py      # Model training script
 │
 ├── README.md
 └── .gitignore
+```
 
 
 ---
@@ -59,3 +60,71 @@ FakeNewsDetection/
 ```bash
 cd training
 python train.py
+
+This will:
+
+Load dataset
+
+Train BERT classifier
+
+Save trained model to:
+
+backend/model/model.pt
+
+⚡ Running the Backend (API)
+
+cd backend
+uvicorn app:app --reload
+
+
+API runs at:
+
+http://localhost:8000
+
+🖥️ Running the Frontend
+cd frontend
+npm install
+npm run dev
+
+
+Frontend runs at:
+
+http://localhost:5173
+
+🔗 API Endpoint
+
+POST /predict
+
+{
+  "text": "News content goes here"
+}
+
+
+Response
+
+{
+  "prediction": "Fake"
+}
+
+🧪 Example Use Case
+
+User enters news text in UI
+
+Frontend sends request to FastAPI
+
+Backend loads trained ML model
+
+Prediction returned and shown in UI
+
+🧩 Future Improvements
+
+Add larger real-world datasets
+
+Improve accuracy with fine-tuning
+
+Dockerize the app
+
+Deploy on cloud (AWS / GCP)
+
+Add confidence score to prediction
+
